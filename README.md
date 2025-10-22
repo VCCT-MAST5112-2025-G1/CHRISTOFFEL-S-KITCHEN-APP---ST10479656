@@ -28,6 +28,3 @@ This is a single-screen mobile application built with React Native and Expo that
 
 You must have **Node.js**, **npm**, and the **Expo ** installed.
 
-```bash
-# Install Expo CLI globally (if you haven't already)
-npm install -g expo-cli
