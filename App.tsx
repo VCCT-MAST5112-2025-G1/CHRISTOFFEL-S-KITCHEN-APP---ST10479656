@@ -4,7 +4,7 @@ import { Text, View, TextInput, Button, Alert, ScrollView } from 'react-native';
 import { DishItem } from './types'; 
 import styles from './styles'; 
 
-// --- Types/Interfaces ---
+
 interface MenuItem {
   name: string;
   description: string;
@@ -15,9 +15,9 @@ interface GroupedMenu {
   [key: string]: MenuItem[];
 }
 
-// --- MenuScreen Component Definition ---
+
 const MenuScreen = () => { 
-    // --- State Variables ---
+    
     const [dishName, setDishName] = useState<string>('');
     const [description, setDescription] = useState<string>('');
     const [course, setCourse] = useState<string>('');
@@ -27,13 +27,13 @@ const MenuScreen = () => {
     const [items, setItems] = useState<DishItem[]>([]);
     const [chefMessage, setChefMessage] = useState('');
 
-    // --- Functions ---
+    
     const handleSave = () => {
-        // Define valid course names for validation
+       
         const validCourses = ['Starter', 'Main Meal', 'Dessert', 'Drink'];
         const trimmedCourse = course.trim();
         
-        // Find the standardized course (e.g., converts 'main meal' to 'Main Meal')
+   
         const standardizedCourse = validCourses.find(c => 
             c.toLowerCase() === trimmedCourse.toLowerCase()
         );
@@ -48,23 +48,22 @@ const MenuScreen = () => {
         const newItem: MenuItem = {
             name: dishName,
             description: description,
-            // Use the standardized course name here to ensure grouping works
+            
             course: standardizedCourse as 'Starter' | 'Main Meal' | 'Dessert' | 'Drink', 
             price: priceNumber,
         };
 
-        // This updates the state and triggers the useMemo hook below
+        
         setMenus((prevItems) => [...prevItems, newItem]);
         setDishName('');
         setDescription('');
-        setCourse(''); // Clear the course input field
+        setCourse('');
         setPrice('');
         setItemAdded(true);
         Alert.alert('Success', 'Menu item added successfully!');
     };
    
 
-    // 🌟 FIX: Use useMemo to recalculate groupedMenu whenever menuItems changes
     const groupedMenu = useMemo(() => {
         const result: GroupedMenu = {
             Starter: [],
@@ -74,15 +73,14 @@ const MenuScreen = () => {
         };
 
         menuItems.forEach((item) => {
-            // This condition is now guaranteed to pass if handleSave was successful
+            
             if (result[item.course]) { 
                 result[item.course].push(item);
             }
         });
         return result;
-    }, [menuItems]); // 👈 This dependency array ensures recalculation on state change
-
-    // --- Return JSX (Render) ---
+    }, [menuItems]); 
+ 
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Christoffell's Kitchen</Text>
@@ -113,8 +111,7 @@ const MenuScreen = () => {
           onChangeText={setDescription}
           placeholder="Enter description"
         />
-        
-        {/* ADDED: Input for Course */}
+    
         <Text style={styles.label}>Course:</Text>
         <TextInput
             style={styles.input}
@@ -135,7 +132,7 @@ const MenuScreen = () => {
         <Button title="Save Dish" onPress={handleSave}/>
           {itemAdded && <Text style={styles.success}>Menu Item Added Successfully!</Text>}
           
-          {/* NOW CORRECTLY UPDATING DISH COUNT */}
+     
        <Text style={styles.section}>Total Dishes: {menuItems.length}</Text> 
        <Text style={styles.section}>Menu Preview</Text>
 
