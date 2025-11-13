@@ -12,6 +12,16 @@ This is a single-screen mobile application built with React Native and Expo that
 * **Dish Removal:** Includes a "Remove" button on each menu card with an alert confirmation for easy item deletion.
 * **Chef's Message:** A dedicated input field for the chef to post a message or highlight a "Meal of the Day."
 
+  ##Screenshots
+  <img width="1170" height="2532" alt="IMG_5015" src="https://github.com/user-attachments/assets/09c79474-c670-41e3-a7ac-8bae4f1606b0" />
+  <img width="1170" height="2532" alt="IMG_5017" src="https://github.com/user-attachments/assets/e725612f-2170-45e1-b871-52b4ed658b8f" />
+  <img width="1170" height="2532" alt="IMG_5018" src="https://github.com/user-attachments/assets/84154b9e-0efb-40ae-97ed-a744140b3efa" />
+  <img width="1170" height="2532" alt="IMG_5016" src="https://github.com/user-attachments/assets/e175b73f-3e5e-49f2-8b07-95c0a322c264" />
+
+
+
+
+
 ---
 
 ## 🛠️ Technology Stack
