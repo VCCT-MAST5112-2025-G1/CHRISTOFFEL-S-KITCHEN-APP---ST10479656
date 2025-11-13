@@ -18,7 +18,8 @@ This is a single-screen mobile application built with React Native and Expo that
   <img width="1170" height="2532" alt="IMG_5018" src="https://github.com/user-attachments/assets/84154b9e-0efb-40ae-97ed-a744140b3efa" />
   <img width="1170" height="2532" alt="IMG_5016" src="https://github.com/user-attachments/assets/e175b73f-3e5e-49f2-8b07-95c0a322c264" />
 
-
+## Links
+https://youtu.be/uXQwF3jZijs?si=wq994J3gAQXUgzvK
 
 
 
